@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ardumower Webinterface/Settings/Motor<</title>
+	<meta name="description" content="Kurzbeschreibung">
+	<link href="../design.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="../functions.js"></script>
+</head>
+
+<body onload="getWerte('s14');">
+
+	<a href="./index.html"><img src="../logo_small.png" alt="Ardumower"></a>
+	<span id="con" style="color:black">Ardumower not connected...</span><span id="aktivity" style="color:black">/</span>
+	<hr>
+
+<table border="0">
+	<col width="500">
+	<tr><td><div style="text-align:center"><font size="5" >Settings/GPS</font></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="q00" type="button" onclick="isClicked(this.id)" class="button">
+				GPS Use(Need Reboot) NO
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="q03_name">GPS Baudrate: </span><span id="q03_val">9600</span></div><br>
+		<input id="q03" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="1" value="9600"  min="9600" max="38400">
+		<div style="text-align:left;float:left"><span id="q03_min">9600</span></div>
+		<div style="text-align:right;float:right"><span id="q03_max">38400</span></div>
+		<div style="text-align:center"><span id="q03_act">9600</span></div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="q01" type="button" onclick="isClicked(this.id)" class="button">
+				RFID Use No
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="q02">Last Rfid</span></div></td></tr>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+5<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ardumower Webinterface/Settings/Motor<</title>
+	<meta name="description" content="Kurzbeschreibung">
+	<link href="../design.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="../functions.js"></script>
+</head>
+
+<body onload="getWerte('s13');">
+
+	<a href="./index.html"><img src="../logo_small.png" alt="Ardumower"></a>
+	<span id="con" style="color:black">Ardumower not connected...</span><span id="aktivity" style="color:black">/</span>
+	<hr>
+
+<table border="0">
+	<col width="500">
+	<tr><td><div style="text-align:center"><font size="5" >Settings/Rain Sensor/Temperatur</font></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="m00" type="button" onclick="isClicked(this.id)" class="button">
+				Use NO
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="m01">Counter 0</span></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="m02">Value 0</span></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="m03" type="button" onclick="isClicked(this.id)" class="button">
+				DHT22 Use
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="m04">Temperatur 0</span></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="m05">Humidity 0</span></div></td></tr>
+	
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="a30_name">Maximum Temperature: </span><span id="a30_val">1</span></div><br>
+		<input id="a30" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" min="1" max="80">
+		<div style="text-align:left;float:left"><span id="a30_min">1</span></div>
+		<div style="text-align:right;float:right"><span id="a30_max">80</span></div>
+		<div style="text-align:center"><span id="a30_act">1</span></div>
+	</td></tr>
+	
+</body>
+</html>

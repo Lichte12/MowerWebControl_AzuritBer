@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ardumower Webinterface/Settings/Motor<</title>
+	<meta name="description" content="Kurzbeschreibung">
+	<link href="./design.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="./functions.js"></script>
+</head>
+
+<body onload="getWerte('r');">
+
+	<a href="./index.html"><img src="./logo_small.png" alt="Ardumower"></a>
+	<span id="con" style="color:black">Ardumower not connected...</span><span id="aktivity" style="color:black">/</span>
+	<hr>
+
+<table border="0">
+	<col width="500">
+	<tr><td><div style="text-align:center"><font size="5" >Commands</font></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="ro" type="button" onclick="isClicked(this.id)" class="button">
+				OFF
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="ra" type="button" onclick="isClicked(this.id)" class="button">
+				Start Now in Auto mode
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><div style="text-align:center"><span id="rb">Actual Status is </span></div></td></tr>
+
+	<tr><td><div style="text-align:center"><span id="rs">Actual State is </span></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="rm" type="button" onclick="isClicked(this.id)" class="button">
+				Mowing is
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="rp" type="button" onclick="isClicked(this.id)" class="button">
+				Pattern is
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="rh" type="button" onclick="isClicked(this.id)" class="button">
+				Go to Station
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="rk" type="button" onclick="isClicked(this.id)" class="button">
+				Start Tracking
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="rt" type="button" onclick="isClicked(this.id)" class="button">
+				Power OFF PCB
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="r1" type="button" onclick="isClicked(this.id)" class="button">
+				User switch 1 is OFF
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="r2" type="button" onclick="isClicked(this.id)" class="button">
+				User switch 2 is OFF
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="r3" type="button" onclick="isClicked(this.id)" class="button">
+				User switch 3 is OFF
+			</button>
+		</div>
+	</td></tr>
+
+</body>
+</html>

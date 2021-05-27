@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+  
+  <meta charset="UTF-8">
+  <title>Ardumower Webinterface</title>
+
+  
+  
+  <meta name="description" content="Kurzbeschreibung">
+
+  
+  <link href="../design.css" rel="stylesheet">
+
+  
+  <script language="javascript" type="text/javascript" src="../functions.js"></script>
+</head><body onload="getWerte('s');">
+<a href="../index.html"><img src="../logo_small.png" alt="Ardumower"></a>
+<span id="con" style="color: black;">Ardumower not connected...</span><span id="aktivity" style="color: black;">/</span>
+<hr>
+<table border="0">
+
+  <col width="500"> <tbody>
+    <tr>
+      <td>
+      <div style="text-align: center;"><font size="5">Settings</font></div>
+      </td>
+    </tr>
+    <tr>
+      <td><button id="sz" type="button" onclick="isClicked(this.id)" class="button_orange">Save Settings</button></td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./motor.html'" class="button">Motor </button>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./mow.html'" class="button">Mow </button>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./bumperduino.html'" class="button">Bumper/Button
+      </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./sonar.html'" class="button">Sonar </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./perimeter.html'" class="button">Perimeter
+      </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./lawn.html'" class="button">Lawn
+Sensor </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./imu.html'" class="button">IMU </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./raspberry.html'" class="button">Raspberry </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./batt.html'" class="button">Battery </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./station.html'" class="button">Station
+      </button> </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./odo.html'" class="button">Odometry </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./rain.html'" class="button">Rain Temp Humid
+Sensor </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./drop.html'" class="button">Drop
+Sensor </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./gps.html'" class="button">GPS RFID </button></div>
+      </td>
+    </tr>
+	<tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./datetime.html'" class="button">Date/Time </button></div>
+      </td>
+    </tr>
+	<tr>
+      <td>
+      <div style="text-align: center;"> <button type="button" onclick="window.location.href='./bylane.html'" class="button">ByLane Settings </button></div>
+      </td>
+    </tr>
+    <tr>
+      <td><button id="sx" type="button" onclick=" isClicked(this.id);" class="button_red">Factory Settings</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+	function isChanging(elem){
+		var ID = elem;
+		var val,ele, ele1;
+		var changed = false;
+		ele = document.getElementById(ID);
+		ele1 = document.getElementById( ID + "_act");
+		val = ele.value;
+		ele1.innerText = val;
+	}
+</script>
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ardumower Webinterface/Settings/Motor<</title>
+	<meta name="description" content="Kurzbeschreibung">
+	<link href="../design.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="../functions.js"></script>
+</head>
+
+<body onload="getWerte('s1');">
+
+	<a href="./index.html"><img src="../logo_small.png" alt="Ardumower"></a>
+	<span id="con" style="color:black">Ardumower not connected...</span><span id="aktivity" style="color:black">/</span>
+	<hr>
+
+<table border="0">
+	<col width="500">
+	<tr><td><div style="text-align:center"><font size="5" >Settings/Vorlage</font></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="a00">Textanzeige</span></div></td></tr>
+
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="a02_name">Slider: </span><span id="a02_val">0</span></div><br>
+		<input id="a02" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="1" value="9600"  min="9600" max="38400">
+		<div style="text-align:left;float:left"><span id="a02_min">0</span></div>
+		<div style="text-align:right;float:right"><span id="a02_max">100</span></div>
+		<div style="text-align:center"><span id="a02_act">0</span></div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="a10" type="button" onclick="isClicked(this.id)" class="button">
+				Testing is OFF
+			</button>
+		</div>
+	</td></tr>
+
+</body>
+</html>

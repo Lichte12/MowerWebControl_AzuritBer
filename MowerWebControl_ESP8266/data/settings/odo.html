@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ardumower Webinterface/Settings/Motor<</title>
+	<meta name="description" content="Kurzbeschreibung">
+	<link href="../design.css" rel="stylesheet">
+  <script language="javascript" type="text/javascript" src="../functions.js"></script>
+</head>
+
+<body onload="getWerte('s11');">
+
+	<a href="./index.html"><img src="../logo_small.png" alt="Ardumower"></a>
+	<span id="con" style="color:black">Ardumower not connected...</span><span id="aktivity" style="color:black">/</span>
+	<hr>
+
+<table border="0">
+	<col width="500">
+	<tr><td><div style="text-align:center"><font size="5" >Settings/Odometry</font></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center;float:center">
+			<button id="l00" type="button" onclick="isClicked(this.id)" class="button">
+				Use YES
+			</button>
+		</div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><span id="l01_1">Value l, r 0, 0</span></div></td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="l04_name">Ticks per one full revolution: </span><span id="l04_val">500</span></div><br>
+		<input id="l04" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="1" value="0"  min="500" max="2300">
+		<div style="text-align:left;float:left"><span id="l04_min">500</span></div>
+		<div style="text-align:right;float:right"><span id="l04_max">2120</span></div>
+		<div style="text-align:center"><span id="l04_act">500</span></div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="l01_name">Ticks per cm: </span><span id="l01_val">10.0</span></div><br>
+		<input id="l01" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="0.1" value="0"  min="10" max="60">
+		<div style="text-align:left;float:left"><span id="l01_min">10.0</span></div>
+		<div style="text-align:right;float:right"><span id="l01_max">60.0</span></div>
+		<div style="text-align:center"><span id="l01_act">10.0</span></div>
+	</td></tr>
+
+	<tr><td><hr></td></tr>
+	<tr><td>
+		<div style="text-align:center"><span id="l02_name">Wheel base cm: </span><span id="l02_val">5.0</span></div><br>
+		<input id="l02" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="0.1" value="5.0"  min="5.0" max="50.0">
+		<div style="text-align:left;float:left"><span id="l02_min">5.0</span></div>
+		<div style="text-align:right;float:right"><span id="l02_max">50.0</span></div>
+		<div style="text-align:center"><span id="l02_act">5.0</span></div>
+	</td></tr>
+
+</body>
+</html>
