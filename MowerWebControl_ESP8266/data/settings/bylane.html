@@ -120,7 +120,24 @@
 		<div style="text-align:center"><span id="w09_act">0</span></div>
 	</td></tr>
 	
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><font size="6" >DEV-Parameter (only editable in DEV-Mode)</font></div></td></tr>
+	
+	<tr><td>	
+		<div style="text-align:center"><span id="w00_name">Dist between Lane CM: </span><span id="w00_val">10</span></div><br>
+		<input id="w00" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="1" value="10"  min="10" max="200">
+		<div style="text-align:left;float:left"><span id="w00_min">10</span></div>
+		<div style="text-align:right;float:right"><span id="w00_max">200</span></div>
+		<div style="text-align:center"><span id="w00_act">10</span></div>
+	</td></tr>	
 
+	<tr><td>	
+		<div style="text-align:center"><span id="w12_name">Lane Max Lenght M: </span><span id="w12_val">3</span></div><br>
+		<input id="w12" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="1" value="3"  min="3" max="50">
+		<div style="text-align:left;float:left"><span id="w12_min">3</span></div>
+		<div style="text-align:right;float:right"><span id="w12_max">50</span></div>
+		<div style="text-align:center"><span id="w12_act">3</span></div>
+	</td></tr>	
 
 
 </body>

@@ -71,5 +71,16 @@
 	<tr><td><hr></td></tr>
 	<tr><td><div style="text-align:center;float:center"><button id="o10" type="button" onclick="isClicked(this.id)" class="button">Testing is OFF</button></div></td></tr>
 
+	<tr><td><hr></td></tr>
+	<tr><td><div style="text-align:center"><font size="6" >DEV-Parameter (only editable in DEV-Mode)</font></div></td></tr>
+	
+	<tr><td>	
+		<div style="text-align:center"><span id="o03_name">MowMotorSenseScale: </span><span id="o03_val">0</span></div><br>
+		<input id="o03" type="range" onchange="isChange(this.id);" oninput="isChanging(this.id)" class="slider" step="0.01" value="0"  min="0" max="3">
+		<div style="text-align:left;float:left"><span id="o03_min">0</span></div>
+		<div style="text-align:right;float:right"><span id="o03_max">3</span></div>
+		<div style="text-align:center"><span id="o03_act">0</span></div>
+	</td></tr>	
+	
 </body>
 </html>
