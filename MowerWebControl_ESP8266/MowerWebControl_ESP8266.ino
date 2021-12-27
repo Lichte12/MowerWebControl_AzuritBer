@@ -3,9 +3,7 @@
 //#include <FS.h>
 //#include <detail/RequestHandlersImpl.h>
 #include <Ticker.h>
-
-
-
+#include "Settings.h"
 
 const char* basetopic = "Ardumower";
 WiFiClient espClient;
@@ -15,18 +13,8 @@ WiFiClient espClient;
 
 #define MAX_CONFIG_LEN  100
 #define MSG_HEADER "[WSB]"
-#define VERSION "vom 23.07.2020"
+#define VERSION "vom 26.12.2021"
 #define CONFIG_MSG_START "config:"
-
-#define SET_IP_SETTING  1  //true=IP-Settings aus programm, false=IP-Settings von Mower
-IPAddress myIP(xxx, xxx, xxx, xxx);
-IPAddress gateway(xxx, xxx, xxx, xxx);
-IPAddress subnet(255, 255, 255, 0);
-IPAddress dns(xxx, xxx, xxx, xxx);
-char *ssid = "xxx";
-char *password = "xxx";
-const char* APssid = "Ardumower";
-const char* APpassword = "";
 
 bool wifiConnected = false;
 int connectCnt = 0;
@@ -376,14 +364,14 @@ String getSkaleVal(String value, String skale) {
   wert = fValue * fskale;
   if (fskale >= 1.0) {
     erg = String(long(wert));
-  } else if (fskale == 0.001) {
+  } else if (skale == "0.001") {
     erg = String(wert, 3);
-  } else if (fskale == 0.01) {
+  } else if (skale == "0.01") {
     erg = String(wert, 2);
-  } else if (fskale == 0.1 ) {
+  } else if (skale == "0.1") {
     erg = String(wert, 1);
   } else {
-    erg = String(wert, 1);
+    erg = String(wert, 2);
   }
   //debugln("fskale=" + String(fskale, 5) + " fValue=" + String(fValue) + " erg=" + erg + " wert=" + wert);
   return erg;
@@ -551,7 +539,7 @@ void handleSet() {
 bool handleFileRead(String path) {
   debugln("handleFileRead: " + path);
   if (path.endsWith("/")) path += "index.html";
-  String contentType = esp8266webserver::getContentType(path);
+  String contentType = getContentType(path);
   if (SPIFFS.exists(path)) {
     File file = SPIFFS.open(path, "r");
     size_t sent = server.streamFile(file, contentType);
@@ -568,6 +556,14 @@ void handleRoot() {
 }
 
 
+String getContentType(String filename){
+  if(filename.endsWith(".html")) return "text/html";
+  else if(filename.endsWith(".css")) return "text/css";
+  else if(filename.endsWith(".js")) return "application/javascript";
+  else if(filename.endsWith(".ico")) return "image/x-icon";
+  else if(filename.endsWith(".gz")) return "application/x-gzip";
+  return "text/plain";
+}
 
 void setup() {
   // Configure Serial Port
